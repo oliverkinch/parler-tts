@@ -24,9 +24,9 @@ export SAVE_TOTAL_LIMIT=1
 export DO_EVAL=false
 
 # Output paths
-export OUTPUT_DIR="./train/output_dir_training/"
-export TEMPORARY_SAVE_TO_DISK="./train/audio_code_tmp/"
-export SAVE_TO_DISK="./train/tmp_dataset_audio/"
+export OUTPUT_DIR="./output/output_dir_training/"
+export TEMPORARY_SAVE_TO_DISK="./output/audio_code_tmp/"
+export SAVE_TO_DISK="./output/tmp_dataset_audio/"
 
 accelerate launch ./training/run_parler_tts_training.py \
     --model_name_or_path "./parler-tts-untrained-600M/parler-tts-untrained-600M/" \
