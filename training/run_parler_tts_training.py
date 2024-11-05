@@ -268,7 +268,6 @@ def main():
                         f" Make sure to set `--{key}` to the correct audio column - one of"
                         f" {', '.join(raw_datasets['train'].column_names)}."
                     )
-
             if data_args.max_train_samples is not None:
                 raw_datasets["train"] = raw_datasets["train"].select(range(data_args.max_train_samples))
 
@@ -297,6 +296,12 @@ def main():
                     raw_datasets["eval"] = (
                         raw_datasets["eval"].shuffle(seed=training_args.seed).select(range(data_args.max_eval_samples))
                     )
+
+        if data_args.no_descriptions:
+            for split in raw_datasets:
+                raw_datasets[split] = raw_datasets[split].remove_columns(data_args.description_column_name)
+                raw_datasets[split] = raw_datasets[split].add_column(data_args.description_column_name, [""] * len(raw_datasets[split]))
+
 
     # 3. Next, let's load the config.
     config = ParlerTTSConfig.from_pretrained(
