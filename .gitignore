@@ -174,3 +174,6 @@ wandb
 
 # Ignore initialized model
 parler-tts-untrained-600M/
+
+# Ignore output files from training
+output/
