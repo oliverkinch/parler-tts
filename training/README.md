@@ -91,6 +91,12 @@ In the rest of this guide, and to reproduce the Parler-TTS Mini v1 training reci
 python helpers/model_init_scripts/init_model_600M.py ./parler-tts-untrained-600M --text_model "google/flan-t5-large" --audio_model "parler-tts/dac_44khZ_8kbps"
 ```
 
+**For danish**
+
+```sh
+python helpers/model_init_scripts/init_model_600M.py ./parler-tts-untrained-600M --text_model "google/mt5-large" --audio_model "parler-tts/dac_44khZ_8kbps"
+```
+
 
 ### Create or find datasets
 
