@@ -314,6 +314,7 @@ class DataTrainingArguments:
         default=2,
         metadata={"help": ("Pad to multiple of for tokenizers.")},
     )
+    no_descriptions: bool = field(default=False, metadata={"help": "If set, will not use descriptions."})
 
 
 @dataclass
