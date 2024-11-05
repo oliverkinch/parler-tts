@@ -171,3 +171,6 @@ tags
 .ruff_cache
 
 wandb
+
+# Ignore initialized model
+parler-tts-untrained-600M/
